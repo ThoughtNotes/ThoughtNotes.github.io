@@ -2,6 +2,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Check } from "lucide-react";
+import { SectionTitle } from "@/components/reusable/SectionTitle"
+
 
 export function Pricing() {
   const plans = [
@@ -26,7 +28,9 @@ export function Pricing() {
 
   return (
     <section id="pricing" className="py-20 px-6 text-center w-full md:px-0 mx-auto md:max-w-5xl">
-      <h2 className="text-3xl font-semibold">Choose <span className="opacity-25 dark:opacity-50">your plan</span></h2>
+      <SectionTitle>
+        Choose <span className="opacity-25 dark:opacity-50">your plan</span>
+      </SectionTitle>
       <div className="mt-6 flex flex-col md:flex-row justify-center gap-6">
         {plans.map((plan, index) => (
           <Card key={index} className="w-full p-6 flex flex-col justify-start rounded-lg">

@@ -1,4 +1,5 @@
 import { Mic, Settings, FileText } from "lucide-react";
+import { SectionTitle } from "@/components/reusable/SectionTitle"
 
 export function HowItWorks() {
   const steps = [
@@ -9,7 +10,9 @@ export function HowItWorks() {
 
   return (
     <section id="how-it-works" className="py-20 px-6 text-center mx-auto md:max-w-5xl">
-      <h2 className="text-3xl font-semibold">How it works</h2>
+      <SectionTitle>
+        How <span className="opacity-25 dark:opacity-50">it works</span>
+      </SectionTitle>
       <div className="mt-6 flex flex-col md:flex-row justify-center items-center gap-6">
         {steps.map((step, index) => (
           <div key={index} className="p-4 border rounded-lg shadow-md w-full text-left">

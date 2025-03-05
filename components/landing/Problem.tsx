@@ -1,5 +1,5 @@
 import { Lightbulb } from "lucide-react";
-import { SectionTitle} from "@/components/reusable/SectionTitle";
+import { SectionTitle } from "@/components/reusable/SectionTitle";
 import { Paragraph} from "@/components/reusable/Paragraph";
 import { ImpactBox } from "@/components/reusable/ImpactBox";
 
