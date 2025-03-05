@@ -27,7 +27,7 @@ export default function Home() {
       <HowItWorks />
       <Features />
       <Pricing />
-      <CTA />
+      <CTA highlightForm={highlightForm}/>
     <Footer />
     </main>
   );
