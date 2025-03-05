@@ -33,7 +33,7 @@ const handleSubscription = (e: React.FormEvent) => {
     }
 }
 
-const actionFormSubscriptionService = ""//https://formspree.io/f/xovjggje";
+const actionFormSubscriptionService = "https://formspree.io/f/xovjggje";
 
 export function Hero({highlight}: HeroProps) {
   const [index, setIndex] = useState(0);
