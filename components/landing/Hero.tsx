@@ -1,41 +1,18 @@
 "use client";
 import { useState, useEffect } from "react";
-import { toast } from "sonner"
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
+import { SubscriptionForm } from "./SubscriptionForm";
 
 type HeroProps = {
   highlight: boolean;
 };
 
-const intro = [
-    "Take notes ",
-    "Give voice ",
-    "Leverage ",
-];
+const intro = ["Take notes ", "Give voice ", "Leverage "];
+const phrases = ["in a structured way.", "to your thoughts.", "the power of AI."];
 
-const phrases = [
-  "in a structured way.",
-  "to your thoughts.",
-  "the power of AI.",
-];
-
-const handleSubscription = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast.success("Success! Thank you for subscribing.", {
-      duration: 3000, // Toast visibile per 3 secondi
-    });
-
-    const inputElement = document.getElementById("subscribe-form-input") as HTMLInputElement | null;
-    if (inputElement) {
-      inputElement.value = ""; // Reset del campo solo se l'elemento esiste
-    }
-}
-
-const actionFormSubscriptionService = "https://formspree.io/f/xovjggje";
-
-export function Hero({highlight}: HeroProps) {
+export function Hero({ highlight }: HeroProps) {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -85,46 +62,28 @@ export function Hero({highlight}: HeroProps) {
         </h1>
 
       <p className="text-lg font-semibold mt-4">
-        Transform your ideas into clear, structured notes with a single click.<br /> Simple, fast, and powered by AI.
+        Transform your ideas into clear, structured notes with a single click.
+        <br /> Simple, fast, and powered by AI.
       </p>
 
       <div id="subscription" className="mt-6 w-full md:max-w-1/2 mx-auto">
-      <motion.div
-        initial={{ scale: 1, border: "none"}}
-        animate={{
-          scale: highlight ? 1.05 : 1,
-          boxShadow: highlight
-            ? "0px 0px 20px rgba(59, 130, 246, 0.7)"
-            : "none",
-        }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="py-2 px-4 rounded-lg w-full border border-gray-300 dark:border-gray-700 transition-all"
-      >
-          <p className="text-md md:text-lg text-gray-600 dark:text-gray-300 ">
-         Enter your email and get an <strong>exclusive discount</strong>!
-         </p>
-        <form 
-            id="subscribe-form"
-            className="flex flex-col md:flex-row items-center justify-center gap-3 " 
-            onSubmit={handleSubscription}
-            action={actionFormSubscriptionService}
-            method="POST"
+        <motion.div
+          initial={{ scale: 1, border: "none" }}
+          animate={{
+            scale: highlight ? 1.05 : 1,
+            boxShadow: highlight
+              ? "0px 0px 20px rgba(59, 130, 246, 0.7)"
+              : "none",
+          }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="py-2 px-4 rounded-lg w-full border border-gray-300 dark:border-gray-700 transition-all"
         >
-          <Input 
-            id="subscribe-form-input"
-            required
-            type="email" 
-            name="email"
-            placeholder="Enter your email" 
-            className="w-full  text-gray-900 dark:text-white bg-white dark:bg-gray-700 placeholder-gray-600 rounded-md shadow-md"
-          />
-          <Button type="submit" variant="primary" className="w-full md:w-auto px-6 py-3 text-md font-semibold" >
-            Sign Up
-          </Button>
-        </form>
-      </motion.div>
+          <p className="text-md md:text-lg text-gray-600 dark:text-gray-300">
+            Enter your email and get an <strong>exclusive discount</strong>!
+          </p>
+          <SubscriptionForm />
+        </motion.div>
       </div>
-
     </section>
   );
 }
