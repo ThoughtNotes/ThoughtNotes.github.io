@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-
+import { toast } from "sonner"
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
@@ -21,10 +21,19 @@ const phrases = [
   "the power of AI.",
 ];
 
-const handleSubscription = () => {
-    alert("Iscritto correttamente, Grazie!");
+const handleSubscription = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast.success("Success! Thank you for subscribing.", {
+      duration: 3000, // Toast visibile per 3 secondi
+    });
+
+    const inputElement = document.getElementById("subscribe-form-input") as HTMLInputElement | null;
+    if (inputElement) {
+      inputElement.value = ""; // Reset del campo solo se l'elemento esiste
+    }
 }
 
+const actionFormSubscriptionService = ""//https://formspree.io/f/xovjggje";
 
 export function Hero({highlight}: HeroProps) {
   const [index, setIndex] = useState(0);
@@ -95,12 +104,14 @@ export function Hero({highlight}: HeroProps) {
          Enter your email and get an <strong>exclusive discount</strong>!
          </p>
         <form 
+            id="subscribe-form"
             className="flex flex-col md:flex-row items-center justify-center gap-3 " 
             onSubmit={handleSubscription}
-            action="https://formspree.io/f/xovjggje"
+            action={actionFormSubscriptionService}
             method="POST"
         >
           <Input 
+            id="subscribe-form-input"
             required
             type="email" 
             name="email"
