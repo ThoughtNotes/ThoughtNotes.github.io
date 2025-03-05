@@ -50,7 +50,6 @@ export const metadata: Metadata = {
       images: ["https://thoughtnotes.com/twitter-image.jpg"],
     },
     robots: "index, follow",
-    canonical: "https://thoughtnotes.com",
 };
 
 export default function RootLayout({

@@ -43,7 +43,7 @@ export function Navbar() {
           <Link href="#pricing" className="block py-2 active:text-primary/80 active:underline" onClick={() => setIsOpen(!isOpen)}>
             Pricing
           </Link>
-          <Button variant="" className="mt-4 w-full" onClick={handleStart}>Get Started</Button>
+          <Button className="mt-4 w-full" onClick={handleStart}>Get Started</Button>
         </div>
       )}
     </nav>
