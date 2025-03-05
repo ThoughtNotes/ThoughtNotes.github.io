@@ -7,15 +7,15 @@ import { motion } from "framer-motion";
 
 
 const intro = [
+    "Take notes ",
     "Give voice ",
     "Leverage ",
-    "Take notes ",
 ];
 
 const phrases = [
+  "in a structured way.",
   "to your thoughts.",
   "the power of AI.",
-  "in a structured way.",
 ];
 
 const handleSubscription = () => {
