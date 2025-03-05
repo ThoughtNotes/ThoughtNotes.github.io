@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
 
+type HeroProps = {
+  highlight: boolean;
+};
 
 const intro = [
     "Take notes ",
@@ -23,7 +26,7 @@ const handleSubscription = () => {
 }
 
 
-export function Hero() {
+export function Hero({highlight}: HeroProps) {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -76,8 +79,19 @@ export function Hero() {
         Transform your ideas into clear, structured notes with a single click.<br /> Simple, fast, and powered by AI.
       </p>
 
-      <div id="subscription" className="mt-8 w-full md:max-w-1/2 mx-auto">
-          <p className="text-md md:text-lg text-gray-600 dark:text-gray-300 mt-2">
+      <div id="subscription" className="mt-6 w-full md:max-w-1/2 mx-auto">
+      <motion.div
+        initial={{ scale: 1, border: "none"}}
+        animate={{
+          scale: highlight ? 1.05 : 1,
+          boxShadow: highlight
+            ? "0px 0px 20px rgba(59, 130, 246, 0.7)"
+            : "none",
+        }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="py-2 px-4 rounded-lg w-full border border-gray-300 dark:border-gray-700 transition-all"
+      >
+          <p className="text-md md:text-lg text-gray-600 dark:text-gray-300 ">
          Enter your email and get an <strong>exclusive discount</strong>!
          </p>
         <form 
@@ -97,6 +111,7 @@ export function Hero() {
             Sign Up
           </Button>
         </form>
+      </motion.div>
       </div>
 
     </section>

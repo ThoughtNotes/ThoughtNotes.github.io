@@ -4,11 +4,17 @@ import { Menu } from "lucide-react";
 import { useState } from "react";
 import Link from 'next/link'
 
-export function Navbar() {
+type NavbarProps = {
+  highlightForm: () => void;
+};
+
+export function Navbar({highlightForm}: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
-
-  const handleStart = () => {}
+  const handleStartAndCloseMenuMobile = () => {
+      highlightForm();
+      setIsOpen(!isOpen);
+  }
 
   return (
     <nav className="w-full bg-white dark:bg-black shadow-md dark:shadow-gray-800 py-4 px-6 fixed top-0 left-0 z-50">
@@ -25,7 +31,7 @@ export function Navbar() {
           <Link href="#pricing" className="hover:text-primary/80 hover:underline">
             Pricing
           </Link>
-          <Button className="text-sm" onClick={handleStart}>Get Started</Button>
+          <Button className="text-sm" onClick={highlightForm}>Get Started</Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -43,7 +49,7 @@ export function Navbar() {
           <Link href="#pricing" className="block py-2 active:text-primary/80 active:underline" onClick={() => setIsOpen(!isOpen)}>
             Pricing
           </Link>
-          <Button className="mt-4 w-full" onClick={handleStart}>Get Started</Button>
+          <Button className="mt-4 w-full" onClick={handleStartAndCloseMenuMobile}>Get Started</Button>
         </div>
       )}
     </nav>
