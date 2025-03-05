@@ -52,7 +52,7 @@ export function Pricing() {
               </ul>
             </CardContent>
             <div className="mb-2 px-6 mt-4">
-              <Button className="w-full">Scegli</Button>
+              <Button disabled className="w-full">Choose</Button>
             </div>
           </Card>
         ))}
