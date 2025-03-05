@@ -1,7 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import { toast } from "sonner";
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { SubscriptionForm } from "./SubscriptionForm";
 

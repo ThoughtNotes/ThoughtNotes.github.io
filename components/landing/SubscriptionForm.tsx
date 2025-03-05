@@ -1,10 +1,9 @@
 "use client";
-import { useState } from "react";
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-const actionFormSubscriptionService = ""//https://formspree.io/f/xovjggje";
+const actionFormSubscriptionService = "https://formspree.io/f/xovjggje";
 
 export function SubscriptionForm() {
   const handleSubscription = (e: React.FormEvent) => {
