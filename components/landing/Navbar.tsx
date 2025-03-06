@@ -1,4 +1,5 @@
 "use client"
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { useState } from "react";
@@ -42,6 +43,11 @@ export function Navbar({highlightForm}: NavbarProps) {
 
       {/* Mobile Menu */}
       {isOpen && (
+      <motion.div
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        transition={{duration: 0.3}}
+      >
         <div className="md:hidden mt-4 bg-white dark:bg-black shadow-lg dark:shadow-gray-800 rounded-lg py-4 px-6 absolute w-full left-0">
           <Link href="#how-it-works" className="block py-3 active:text-primary/80 active:underline" onClick={() => setIsOpen(!isOpen)}>
             How It Works
@@ -51,6 +57,7 @@ export function Navbar({highlightForm}: NavbarProps) {
           </Link>
           <Button className="mt-4 w-full" onClick={handleStartAndCloseMenuMobile}>Get Started</Button>
         </div>
+      </motion.div>
       )}
     </nav>
   );
