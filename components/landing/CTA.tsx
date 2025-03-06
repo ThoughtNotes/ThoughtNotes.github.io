@@ -9,7 +9,6 @@ type CTAProps = {
 
 export function CTA({highlightForm}: CTAProps) {
   const handleTry = () => {
-    window.scrollTo(0,0);
     highlightForm();
   }
 

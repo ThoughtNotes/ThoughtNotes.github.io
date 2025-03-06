@@ -15,6 +15,7 @@ export default function Home() {
   const [highlight, setHighlight] = useState(false);
 
   const highlightForm = () => {
+    window.scrollTo(0,0);
     setHighlight(true);
     setTimeout(() => setHighlight(false), 2000);
   };

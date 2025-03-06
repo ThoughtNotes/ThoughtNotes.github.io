@@ -12,8 +12,8 @@ export function Navbar({highlightForm}: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleStartAndCloseMenuMobile = () => {
-      highlightForm();
       setIsOpen(!isOpen);
+      highlightForm();
   }
 
   return (
