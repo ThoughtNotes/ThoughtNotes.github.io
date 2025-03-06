@@ -8,20 +8,21 @@ import { SectionTitle } from "@/components/reusable/SectionTitle"
 export function Pricing() {
   const plans = [
     { 
-      name: "Free", 
-      price: "€0/month", 
-      features: ["5 notes", "Basic AI", ""] 
+      name: "Free Trial", 
+      price: "€0", 
+      features: ["25 notes", "Text notes", "Basic exporting", ""] 
     },
     { 
       name: "Pro", 
       price: "€9,99/month", 
-      features: ["Unlimited notes", "Basic AI", "Document export options"] 
+      discountedPrice: "€7,99/month", 
+      features: ["75 notes / day", "Text & Speech notes", "Document exporting"] 
     },
     { 
       name: "Business", 
       price: "€19,99/month", 
-      discountedPrice: "€14,99/month", 
-      features: ["Unlimited notes", "Advanced AI", "Document export options"] 
+      discountedPrice: "€16,99/month", 
+      features: ["Unlimited notes", "Text & Speech notes", "Document exporting"] 
     }
   ];
 
